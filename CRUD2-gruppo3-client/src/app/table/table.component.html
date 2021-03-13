@@ -1,0 +1,14 @@
+<p>table works!</p>
+<div>
+    <table>
+        <tr>
+            <th>Codice</th>
+            <th>Descrizione</th>
+        </tr>
+        <tr *ngFor="let c of prodotti">
+            <td>{{c.codice}}</td>
+            <td>{{c.descrizione}}</td>
+            <button (click)= "seleziona(c.codice)">Seleziona</button>
+        </tr>
+    </table>
+</div>
