@@ -17,7 +17,7 @@ export class FormComponent implements OnInit {
 
   constructor() {
     this.prodotto = new Prodotto();
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -31,11 +31,11 @@ export class FormComponent implements OnInit {
 
   annulla() {
     this.ann.emit(this.prodotto);
-    this.prodotto=new Prodotto();
+    this.prodotto = new Prodotto();
   }
 
   rimuovi() {
     this.rim.emit(this.prodotto);
-    
+
   }
 }

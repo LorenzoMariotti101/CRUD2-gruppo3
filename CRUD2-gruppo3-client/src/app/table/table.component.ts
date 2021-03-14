@@ -17,8 +17,8 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  seleziona(){
-    this.sel.emit(this.prodotto);
+  seleziona(c: Prodotto){
+    this.sel.emit(c);
   }
 
 }
