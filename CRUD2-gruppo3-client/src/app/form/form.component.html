@@ -1,8 +1,10 @@
 <p>form works!</p>
-<input type = "text" placeholder="Codice" [(ngModel)] = "prodotto.codice">
-<input type = "text" placeholder="Descrizione" [(ngModel)] = "prodotto.descrizione">
+<input type = "text" placeholder="Codice" [(ngModel)] = "prodotto.codice"
+[disabled]= "!codiceVisible">
+<input type = "text" placeholder="Descrizione" [(ngModel)] = "prodotto.descrizione" 
+[disabled]= "!descrizioneVisible">
 <br>
-<button (click) = "modifica()">Modifica</button>
-<button (click) = "conferma()">Conferma</button>
-<button (click) = "annulla()">Annulla</button>
-<button (click) = "rimuovi()">Rimuovi</button>
+<button (click) = "modifica()" [disabled]= "!modificaVisible">Modifica</button>
+<button (click) = "conferma()" [disabled]= "!confermaVisible">Conferma</button>
+<button (click) = "annulla()" [disabled]= "!annullaVisible">Annulla</button>
+<button (click) = "rimuovi()" [disabled]= "!rimuoviVisible">Rimuovi</button>

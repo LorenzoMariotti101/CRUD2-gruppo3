@@ -1,10 +1,17 @@
 <router-outlet></router-outlet>
 <fieldset [disabled]="!formVisible">
 <app-form (mod)="modifica($event)" (rim)="rimuovi($event)" (conf)="conferma($event)" 
-(ann)="annulla($event)" [prodotto] = "prodotto"></app-form>
+(ann)="annulla($event)" [prodotto] = "prodotto" [confermaVisible] = "confermaVisible" 
+[modificaVisible] = "modificaVisible" [rimuoviVisible] = "rimuoviVisible" 
+[annullaVisible] = "annullaVisible" [codiceVisible] = "codiceVisible" 
+[descrizioneVisible] = "descrizioneVisible"></app-form>
 </fieldset>
 <button (click) = "add()" [disabled]= "!addVisible">Nuova</button>
 <br>
+<fieldset [disabled]= "!searchVisible">
 <app-search (ricerca) = "ricerca($event)"></app-search>
+</fieldset>
 <br>
+<fieldset [disabled]= "!selezionaVisible">
 <app-table (sel) = "seleziona($event)" [prodotti] = "prodotti"></app-table>
+</fieldset>

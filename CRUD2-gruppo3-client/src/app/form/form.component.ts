@@ -9,6 +9,12 @@ import { Prodotto } from '../prodotto';
 })
 export class FormComponent implements OnInit {
 
+  @Input() modificaVisible: boolean;
+  @Input() confermaVisible: boolean;
+  @Input() rimuoviVisible: boolean;
+  @Input() annullaVisible: boolean;
+  @Input() codiceVisible: boolean;
+  @Input() descrizioneVisible: boolean;
   @Input() prodotto: Prodotto = new Prodotto();
   @Output() mod: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
   @Output() conf: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
