@@ -1,5 +1,5 @@
 <router-outlet></router-outlet>
-<app-form></app-form>
+<app-form (mod)="modifica($event)" (rim)="rimuovi($event)" (conf)="conferma($event)" (ann)="annulla($event)"></app-form>
 <button (click) = "add()">Nuova</button>
 <br>
 <app-search></app-search>

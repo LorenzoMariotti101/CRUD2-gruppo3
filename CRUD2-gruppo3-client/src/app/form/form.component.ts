@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Prodotto } from '../prodotto';
+
 
 @Component({
   selector: 'app-form',
@@ -7,28 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  codice: string;
-  descrizione: string;
+  @Input() prodotto: Prodotto = new Prodotto;
+  @Output() mod: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
+  @Output() conf: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
+  @Output() ann: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
+  @Output() rim: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  modifica(){
-
+  modifica() {
+    this.mod.emit(this.prodotto);
   }
 
-  conferma(){
-
+  conferma() {
+    this.conf.emit(this.prodotto);
   }
 
-  annulla(){
-
+  annulla() {
+    this.ann.emit(this.prodotto);
+    this.prodotto=new Prodotto();
   }
 
-  rimuovi(){
+  rimuovi() {
+    this.rim.emit(this.prodotto);
     
   }
-
 }

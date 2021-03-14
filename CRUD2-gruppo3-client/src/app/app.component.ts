@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Prodotto } from './prodotto';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+  
 
-  add(){
-    
+  add() {
+
+  }
+  modifica(p: Prodotto) {
+    console.log(p);
+  }
+
+  conferma(p: Prodotto) {
+    console.log(p);
+  }
+
+  annulla(p: Prodotto) {
+  }
+
+  rimuovi(p: Prodotto) {
+    console.log(p);
   }
 }
