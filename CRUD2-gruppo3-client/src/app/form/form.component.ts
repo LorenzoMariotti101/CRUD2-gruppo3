@@ -9,13 +9,15 @@ import { Prodotto } from '../prodotto';
 })
 export class FormComponent implements OnInit {
 
-  @Input() prodotto: Prodotto = new Prodotto;
+  @Input() prodotto: Prodotto = new Prodotto();
   @Output() mod: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
   @Output() conf: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
   @Output() ann: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
   @Output() rim: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
 
-  constructor() { }
+  constructor() {
+    this.prodotto = new Prodotto();
+   }
 
   ngOnInit(): void {
   }

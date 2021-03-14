@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Prodotto } from '../prodotto';
 
 @Component({
@@ -8,7 +8,9 @@ import { Prodotto } from '../prodotto';
 })
 export class TableComponent implements OnInit {
 
-  prodotti: Prodotto[] = [];
+  @Input() prodotto: Prodotto = new Prodotto();
+  @Input() prodotti: Prodotto[] = [];
+  @Output() sel: EventEmitter<Prodotto> = new EventEmitter<Prodotto>();
 
   constructor() { }
 
@@ -16,7 +18,7 @@ export class TableComponent implements OnInit {
   }
 
   seleziona(){
-
+    this.sel.emit(this.prodotto);
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Prodotto } from './prodotto';
 
 @Component({
@@ -8,11 +8,15 @@ import { Prodotto } from './prodotto';
 })
 export class AppComponent {
   title = 'client';
+
+  prodotto: Prodotto = new Prodotto();
+  prodotti: Prodotto[] = [];
   
-
   add() {
-
+    this.prodotti.push(this.prodotto);
+    this.prodotto = new Prodotto();
   }
+
   modifica(p: Prodotto) {
     console.log(p);
   }
@@ -26,5 +30,13 @@ export class AppComponent {
 
   rimuovi(p: Prodotto) {
     console.log(p);
+  }
+
+  cerca(criterio: string){
+    console.log(criterio);
+  }
+
+  seleziona(p: Prodotto){
+      this.prodotto = p;
   }
 }
