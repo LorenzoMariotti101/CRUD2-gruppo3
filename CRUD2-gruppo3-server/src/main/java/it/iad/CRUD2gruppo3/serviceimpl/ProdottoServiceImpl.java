@@ -17,7 +17,7 @@ public class ProdottoServiceImpl implements ProdottoService {
 
     @Override
     public List<Prodotto> ricerca(String s) {
-        return prodottoRepository.findbyCodiceContainsOrDescrizioneContains(s, s);
+        return prodottoRepository.findByCodiceContainsOrDescrizioneContains(s, s);
     }
 
     @Override
@@ -34,7 +34,8 @@ public class ProdottoServiceImpl implements ProdottoService {
 //        prodDaDb.setDescrizione(prodotto.getDescrizione());
 //        prodDaDb.setDescrizione(prodotto.getCodice());
 //        prodottoRepository.save(prodDaDb);
-        return prodottoRepository.setFixedCodiceForAndDescrizioneFor(prodotto.getCodice(), prodotto.getDescrizione(), prodotto.getId());
+        return seleziona();
+        //return prodottoRepository.setFixedCodiceForAndDescrizioneFor(prodotto.getCodice(), prodotto.getDescrizione(), prodotto.getId());
     }
 
     @Override

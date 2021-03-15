@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProdottoRepository extends JpaRepository<Prodotto, Long> {
 
-    List<Prodotto> findbyCodiceContainsOrDescrizioneContains(String c, String a);
-    @Modifying
-    @Query("update from Prodotto p set p.codice = ?1 set p.descrizione = ?2 where u.id = ?3")
-    List<Prodotto> setFixedCodiceForAndDescrizioneFor(String codice, String descrizione, Long Id);
+    List<Prodotto> findByCodiceContainsOrDescrizioneContains(String c, String a);
+    //@Modifying
+    //@Query("update from Prodotto p set p.codice = ?1 set p.descrizione = ?2 where u.id = ?3")
+    //List<Prodotto> setFixedCodiceForAndDescrizioneFor(String codice, String descrizione, Long Id);
 }
